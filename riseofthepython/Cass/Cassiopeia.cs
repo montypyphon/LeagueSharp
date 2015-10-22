@@ -192,7 +192,7 @@ namespace riseofthepython.Champions
 
 				}
 
-				if (R.IsReady () && R.IsInRange(target)) 
+				if (R.IsReady())
 				{
 					R.CastIfWillHit (target, GetValueMenuSlider ("combo.R2"));
 				}
