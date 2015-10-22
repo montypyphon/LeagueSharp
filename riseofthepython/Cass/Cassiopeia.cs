@@ -35,7 +35,7 @@ namespace riseofthepython.Champions
 			CreateMenuBool("Combo", "Combo.Q", "Use Q", true);
 			CreateMenuBool("Combo", "Combo.W", "Use W", true);
 			CreateMenuBool("Combo", "Combo.E", "Use E", true);
-			CreateMenuBool("Combo", "Combo.R", "Use R", true);
+			CreateMenuBool("Combo", "Combo.R", "UseR", true);
 			CreateMenuSlider("Combo", "Combo.R2 ", "Enemies until R use", 0, 1, 5);
 			CreateMenuBool("Combo", "Combo.Ignite","Use Ignite In Combo", true); 
 			CreateMenuSlider("Combo", "Combo.EDelay", "Delay E", 0, 900, 2000);
@@ -192,8 +192,11 @@ namespace riseofthepython.Champions
 
 				}
 
-				if (R.IsReady () && R.IsInRange (target) && GetValueMenuSlider ("Combo.R2") >= 5)
-					R.Cast(target); //fixed by media!
+				if (R.IsReady () && R.IsInRange(target)) 
+				{
+					R.CastIfWillHit (target, GetValueMenuSlider ("combo.R2"));
+				}
+					 //fixed by media!
 			}
 		}
 		static void Harass()
