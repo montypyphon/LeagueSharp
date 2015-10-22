@@ -192,8 +192,8 @@ namespace riseofthepython.Champions
 
 				}
 
-				if (R.IsReady() && R.IsInRange(target) && GetValueMenuBool("Combo.R2"))
-					R.Cast(target);
+				if (R.IsReady () && R.IsInRange (target) && GetValueMenuSlider ("Combo.R2") >= 5)
+					R.Cast(target); //fixed by media!
 			}
 		}
 		static void Harass()
