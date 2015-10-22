@@ -52,7 +52,7 @@ namespace riseofthepython.Champions
 			CreateMenuBool("GC", "GC.W", "Use W", true);
 
 			menu.AddSubMenu(new Menu("Kill Steal", "KS"));
-			CreateMenuBool("KC", "KS.Q", "Use Q", true);
+			CreateMenuBool("KS", "KS.Q", "Use Q", true);
 
 			menu.AddSubMenu(new Menu("Farm", "Farm"));
 			CreateMenuBool("Farm", "Farm.Q", "Use Q", true);
@@ -267,7 +267,7 @@ namespace riseofthepython.Champions
 
 				foreach(var minion in eMinion)
 				{
-					if (minion.IsValidTarget())
+					if (minion.HasBuffOfType(BuffType.Poison))
 						E.CastOnUnit(minion);
 				}
 			}
@@ -300,7 +300,7 @@ namespace riseofthepython.Champions
 
 				foreach (var minion in eMinion)
 				{
-					if (minion.IsValidTarget())
+					if (minion.HasBuffOfType(BuffType.Poison))
 						E.CastOnUnit(minion);
 				}
 			}
