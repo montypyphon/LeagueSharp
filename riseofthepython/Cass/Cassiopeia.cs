@@ -158,6 +158,7 @@ namespace riseofthepython.Champions
 		{
 			var target = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Magical);
 			var eDelay = GetValueMenuSlider("Combo.EDelay");
+		
 
 			if (target != null)
 			{
@@ -193,8 +194,8 @@ namespace riseofthepython.Champions
 
 				}
 
-				if (R.IsReady() && player.CountEnemiesInRange(R.Range) >= GetValueMenuSlider ("Combo.R2"))
-					R.Cast(target);
+				if (R.IsReady () && player.CountEnemiesInRange (R.Range) >= GetValueMenuSlider ("Combo.R2"))
+					R.CastIfWillHit (target, Assemblyhelper.GetValueMenuSlider ("Combo.R2"));
 			}
 		}
 		static void Harass()
